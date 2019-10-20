@@ -41,6 +41,7 @@ module.exports = () => {
 					'./public/favicon.ico',
 					'./public/manifest.json',
 					{ from: 'public/aragon-ui', to: 'aragon-ui' },
+					{ from: 'public/_redirects', to: '_redirects' },
 				]),
 				new WriteWebPackPlugin(),
 			],
