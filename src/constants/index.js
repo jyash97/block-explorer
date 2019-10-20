@@ -1,0 +1,8 @@
+const BLOCK_SIZES = [10, 20, 30, 40, 50];
+const TRANSACTION_SIZES = [10, 20, 40, 60, 80, 100];
+
+const ETHER_TO_WEI = 1000000000000000000;
+
+const COINBASE_API_URL = 'https://api.coinbase.com/v2';
+
+export { BLOCK_SIZES, TRANSACTION_SIZES, ETHER_TO_WEI, COINBASE_API_URL };

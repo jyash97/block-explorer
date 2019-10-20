@@ -1,7 +1,3 @@
-# react-starter
-
-Application with code splitting setup along with prettier and eslint configuration.
-
 ## Start Application
 
 ```

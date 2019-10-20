@@ -1,4 +1,5 @@
 {
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true
+	"editor.formatOnSave": true,
+	"prettier.eslintIntegration": true,
+	"workbench.list.automaticKeyboardNavigation": false
 }

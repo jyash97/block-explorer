@@ -40,7 +40,7 @@ module.exports = () => {
 				new CopyWebpackPlugin([
 					'./public/favicon.ico',
 					'./public/manifest.json',
-					{ from: 'static/images', to: 'images' },
+					{ from: 'public/aragon-ui', to: 'aragon-ui' },
 				]),
 				new WriteWebPackPlugin(),
 			],
