@@ -10,13 +10,20 @@ const Home = () => {
 	const instance = React.useContext(Web3Context);
 	const [blockSizeIndex, changeSizeIndex] = React.useState(0);
 	const [loading, setLoading] = React.useState(false);
+	const [error, setError] = React.useState(null);
 	const [blocks, setBlocks] = React.useState([]);
 	const [interval, changeInterval] = React.useState(60000);
 
 	const fetchNewBlocks = () => {
 		setLoading(true);
 		instance.eth.getBlockNumber((_, number) => {
-			setBlocks([...Array(BLOCK_SIZES[blockSizeIndex]).keys()].map(index => number - index));
+			if (number) {
+				setBlocks(
+					[...Array(BLOCK_SIZES[blockSizeIndex]).keys()].map(index => number - index),
+				);
+			} else {
+				setError('No block Number returned in the API. It can be due to Browser.');
+			}
 			setLoading(false);
 		});
 	};
@@ -45,6 +52,10 @@ const Home = () => {
 
 	if (loading) {
 		return <Text>Loading..</Text>;
+	}
+
+	if (error) {
+		return <Text>{error}</Text>;
 	}
 
 	return (
